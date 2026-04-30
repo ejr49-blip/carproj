@@ -1,0 +1,19 @@
+{
+  "site":{
+    "title":"Sports Car Evolution",
+    "version":"0.2",
+    "sdd":"This JSON is the spec that drives story rendering and paging behaviour.",
+    "contentTypes":{
+      "storyItem":{
+        "fields":["id","title","summary","body","image","author","license","tags","relatedExhibit"]
+      }
+    },
+    "story":{
+      "paging":{
+        "pageSize":4,
+        "infiniteLoop":false
+      },
+      "presentation":["image","title","summary","body","author"]
+    }
+  }
+}

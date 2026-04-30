@@ -1,0 +1,134 @@
+[
+  {
+    "id":"story-01",
+    "title":"Lightweight Beginnings",
+    "summary":"How early builders prioritized lightness and craft over raw power.",
+    "body":"Early sports cars were exercises in minimalism: lightweight chassis, hand-formed coachwork, and compact powertrains. These choices led to design languages where proportion, balance, and driver engagement mattered more than peak speed. This deep dive explains how builders calibrated weight, gear ratios, and suspension geometry to create agility on narrow roads.",
+    "image":"assets/images/origins.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["origins","design","engineering"],
+    "relatedExhibit":"origins"
+  },
+  {
+    "id":"story-02",
+    "title":"Proportion & Emotion",
+    "summary":"Why the Golden Era changed how we feel about cars.",
+    "body":"Proportion became a language: hood length, cabin tuck, and wheel-to-body ratio created an immediate emotional read. We'll look at how proportion, color, and material choices combine to communicate speed, luxury, or fragility.",
+    "image":"assets/images/golden.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["golden","design","emotion"],
+    "relatedExhibit":"golden"
+  },
+  {
+    "id":"story-03",
+    "title":"The Supercar Spectacle",
+    "summary":"From function to icon — supercars as cultural statements.",
+    "body":"Supercars blended extreme aerodynamics, dramatic proportions, and materials innovation. This essay traces how spectacle and engineering co-evolved, with a focus on composite panels, downforce design, and the role of racing homologation.",
+    "image":"assets/images/supercar.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["supercar","materials","aero"],
+    "relatedExhibit":"supercar"
+  },
+  {
+    "id":"story-04",
+    "title":"Electronics: Invisible Performance",
+    "summary":"How software and sensors changed driver interfaces.",
+    "body":"Electronics introduced precision and safety but also new design constraints. Explore traction control evolution, ECU mapping, telemetry and how software tuning changed the meaning of 'driver skill'.",
+    "image":"assets/images/modern.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["modern","electronics","systems"],
+    "relatedExhibit":"modern"
+  },
+  {
+    "id":"story-05",
+    "title":"Packaging the Electric Future",
+    "summary":"Battery placement, thermal systems and the new rules of layout.",
+    "body":"Battery architecture forces new structural strategies. This article explains cooling, safety barriers, and how weight distribution is rethought to preserve handling while maximizing range.",
+    "image":"assets/images/electrification.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["electrification","packaging","thermal"],
+    "relatedExhibit":"electrification"
+  },
+  {
+    "id":"story-06",
+    "title":"New Makers, New Values",
+    "summary":"How startups and software-first companies are reshaping the sports car.",
+    "body":"New entrants prioritize software, user experience, and vertical integration. This piece compares heritage marques with modern disruptors on engineering approach and cultural posture.",
+    "image":"assets/images/future.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["future","culture","software"],
+    "relatedExhibit":"future"
+  },
+  {
+    "id":"story-07",
+    "title":"Chassis Tuning Deep Dive",
+    "summary":"Shock valving, anti-roll balance and the art of handling.",
+    "body":"A technical walkthrough of suspension tuning principles, including valving choices, bushings, roll centers and how engineers tune for understeer vs oversteer.",
+    "image":"assets/images/modern.jpg",
+    "author":"Technical Editor",
+    "license":"CC BY-SA 4.0",
+    "tags":["engineering","suspension"],
+    "relatedExhibit":"modern"
+  },
+  {
+    "id":"story-08",
+    "title":"Design Language: Surface & Detail",
+    "summary":"The small details that make a car feel complete.",
+    "body":"Examine the design decisions at the surface level: character lines, sheet metal transitions, lighting signatures and how these scale across model families.",
+    "image":"assets/images/golden.jpg",
+    "author":"Design Lead",
+    "license":"CC BY-SA 4.0",
+    "tags":["design","detail"],
+    "relatedExhibit":"golden"
+  },
+  {
+    "id":"story-09",
+    "title":"The Sound of Speed",
+    "summary":"Why exhaust notes and mechanical sounds matter.",
+    "body":"An acoustic look at intake and exhaust tuning, resonance chambers, and how manufacturers preserve or synthesize sound as emissions regulations tighten.",
+    "image":"assets/images/supercar.jpg",
+    "author":"Acoustics Researcher",
+    "license":"CC BY-SA 4.0",
+    "tags":["sound","experience"],
+    "relatedExhibit":"supercar"
+  },
+  {
+    "id":"story-10",
+    "title":"Manufacturing & Sustainability",
+    "summary":"Materials choice, lifecycle thinking, and the modern supply chain.",
+    "body":"A review of material impacts and how manufacturers are designing for recyclability, lower embodied carbon, and circularity while retaining performance.",
+    "image":"assets/images/electrification.jpg",
+    "author":"Sustainability Officer",
+    "license":"CC BY-SA 4.0",
+    "tags":["sustainability","manufacturing"],
+    "relatedExhibit":"electrification"
+  },
+  {
+    "id":"story-11",
+    "title":"Heritage vs Innovation",
+    "summary":"How brands balance legacy with forward motion.",
+    "body":"Case studies on how legacy carmakers introduce modern tech while preserving brand DNA — a careful balancing act of aesthetics and engineering compromises.",
+    "image":"assets/images/origins.jpg",
+    "author":"Curator",
+    "license":"CC BY-SA 4.0",
+    "tags":["culture","brands"],
+    "relatedExhibit":"golden"
+  },
+  {
+    "id":"story-12",
+    "title":"The Driver-Centered Interface",
+    "summary":"HMI considerations: feedback, latency and trust.",
+    "body":"Human-machine interfaces have redefined how drivers interact with performance systems. This article outlines latency budgets, feedback design and how trust is earned back from automation features.",
+    "image":"assets/images/modern.jpg",
+    "author":"UX Researcher",
+    "license":"CC BY-SA 4.0",
+    "tags":["UX","systems"],
+    "relatedExhibit":"modern"
+  }
+]
