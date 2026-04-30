@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sports Car Evolution Museum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="logo-square" aria-hidden="true"></span> Sports Car Evolution</div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#exhibits">Exhibits</a>
+      <a href="#narrative">Narrative</a>
+      <a href="#visit">Visit</a>
+      <a href="guided-tour.html">Guided Tour</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Sports Car Evolution</h1>
+        <p class="lead">A curated exhibition tracing design, engineering, and emotion.</p>
+        <a class="cta" href="#exhibits">Enter the Exhibition</a>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="geom geom-1"></div>
+        <div class="geom geom-2"></div>
+        <div class="geom geom-3"></div>
+      </div>
+    </section>
+
+    <section id="narrative" class="section narrative">
+      <h2>Narrative Flow</h2>
+      <p>From early experiments in lightness to the golden age of analog performance, through high-performance engineering and electrification — this exhibition maps how sports cars evolved as technology and culture collided.</p>
+      <ul>
+        <li><strong>Origins:</strong> lightweight experiments & bespoke coachwork.</li>
+        <li><strong>Golden Era:</strong> styling became identity and emotion.</li>
+        <li><strong>Modernization:</strong> aerodynamics, materials, and electronics.</li>
+        <li><strong>Today:</strong> hybrid, electric, and the future of performance.</li>
+      </ul>
+    </section>
+
+    <section id="exhibits" class="section exhibits">
+      <h2>Exhibit Organization</h2>
+      <div id="exhibit-grid" class="grid"></div>
+    </section>
+
+    <section id="guided" class="section guided">
+      <h2>Guided Tours</h2>
+      <p>Choose a curated path through the exhibition — chronological or thematic.</p>
+      <div class="tour-controls">
+        <a class="btn" href="guided-tour.html?tour=chronological">Chronological Tour</a>
+        <a class="btn" href="guided-tour.html?tour=design">Design-Focused</a>
+        <a class="btn" href="guided-tour.html?tour=engineering">Engineering-Focused</a>
+      </div>
+    </section>
+
+    <section id="visit" class="section visit">
+      <h2>Visitor Experience</h2>
+      <p>Paths: thematic (design, engineering, cultural) or chronological. Each artifact includes provenance, technical specs, and curator notes to invite deeper engagement.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Images: Selected from Wikimedia Commons under CC BY-SA licenses. See exhibit details for full attribution.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-shell">
+      <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+      <figure>
+        <img id="modal-img" src="" alt="">
+        <figcaption id="modal-caption"></figcaption>
+      </figure>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="assets/scripts.js"></script>
+</body>
+</html>

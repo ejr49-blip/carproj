@@ -1,0 +1,140 @@
+[
+  {
+    "id": "origins",
+    "title": "Origins — 1885–1930",
+    "period": "Origins",
+    "description": "The earliest sports cars were lightweight experiments: bespoke coachwork, hand-built engines and a focus on agility. This era introduced design languages that would inform later icons.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/1922_Bugatti_Type_13_Brescia_Sports.jpg",
+    "credit": "Lars-Göran Lindgren / CC BY-SA 4.0 (via Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:1922_Bugatti_Type_13_Brescia_Sports.jpg",
+    "author": "Lars-Göran Lindgren",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "localImage": "assets/images/origins.jpg",
+    "curatorNotes": "Provenance: early competition and coachbuilt examples. Display on a low plinth with a visible chassis cutaway panel to reveal construction methods.",
+    "technicalSpecs": {
+      "representativeModels": ["Bugatti Type 13 Brescia"],
+      "engine": "~1.3–1.5 L inline-4 (period variants)",
+      "power": "~30–50 hp (varies by tune)",
+      "weight": "~600–800 kg",
+      "notes": "Emphasis on lightness, narrow-track geometry, and coachbuilt bodies."
+    },
+    "educationalValue": "Explains early powertrain design, coachbuilding, and the experimental nature of early automotive engineering.",
+    "emotionalEngagement": "Evokes craft, rarity, and human-scale engineering; visitors connect with hand-made detail.",
+    "presentation": "Label with provenance, maker notes, and an interactive timeline showing manufacturing techniques."
+  },
+  {
+    "id": "golden",
+    "title": "Golden Era — 1950s–1970s",
+    "period": "Golden Era",
+    "description": "Styling matured into identity. Manufacturers like Ferrari, Aston Martin, and Porsche turned performance into emotional storytelling through proportion, color, and sound.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/1970_Jaguar_E-Type_Roadster_4.2.jpg",
+    "credit": "Vauxford / CC BY-SA 4.0 (via Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:1970_Jaguar_E-Type_Roadster_4.2.jpg",
+    "author": "Vauxford",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "localImage": "assets/images/golden.jpg",
+    "curatorNotes": "Highlight design proportion, coachline, and the role of sound in emotional design. Include a short audio clip of the engine note.",
+    "technicalSpecs": {
+      "representativeModels": ["Jaguar E-Type (series 1)", "Aston Martin DB5", "Ferrari 250 GT"] ,
+      "engine": "3.8–4.2 L inline-6 (typical examples)",
+      "power": "~250–300+ hp (varies by model)",
+      "weight": "~1100–1400 kg",
+      "notes": "Styling becomes identity; coachwork and proportion are key teaching points."
+    },
+    "educationalValue": "Explores design language and the relationship between form and emotion in automotive design.",
+    "emotionalEngagement": "Strong — colour, proportion and sound create an immediate emotional response.",
+    "presentation": "Place with curated lighting, period photography, and designer quotes."
+  },
+  {
+    "id": "supercar",
+    "title": "Supercars — 1980s–2000s",
+    "period": "Supercars",
+    "description": "Aerodynamics, composite materials, and turbocharged performance created visceral machines. This era elevated cars to cultural icons and racing technology trickled down to road cars.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Lamborghini_Countach_LP_5000S_1983.jpg",
+    "credit": "Palauenc05 / CC BY-SA 4.0 (via Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:Lamborghini_Countach_LP_5000S_1983.jpg",
+    "author": "Palauenc05",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "localImage": "assets/images/supercar.jpg",
+    "curatorNotes": "Show cross-sections of aerodynamic elements and composite panel samples; explain how racing tech influenced road cars.",
+    "technicalSpecs": {
+      "representativeModels": ["Lamborghini Countach", "McLaren F1", "Ferrari F40"],
+      "engine": "Large-displacement V8/V12 and forced-induction options",
+      "power": "~350–500+ hp (varies with model)",
+      "weight": "~1200–1500 kg",
+      "notes": "Rapid advances in materials and aerodynamics; styling becomes extreme and iconic."
+    },
+    "educationalValue": "Demonstrates materials science, aerodynamic design, and the intersection of performance and spectacle.",
+    "emotionalEngagement": "High — these are showpieces that often define popular culture imagery.",
+    "presentation": "Use low, angled plinths and mirrored floor panels to emphasize silhouette."
+  },
+  {
+    "id": "modern",
+    "title": "Modern Performance — 2000s–2010s",
+    "period": "Modern",
+    "description": "Electronics, stability control, and advanced engineering refined driver experience, offering both blistering speed and precision handling.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/2013_Porsche_911_Carrera_4S_%28991%29_%286266546987%29.jpg",
+    "credit": "Matti Blume / CC BY-SA 4.0 (via Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:2013_Porsche_911_Carrera_4S_(991)_(6266546987).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "localImage": "assets/images/modern.jpg",
+    "curatorNotes": "Focus on electronics, chassis systems, and how driver aids changed the capability envelope. Include an interactive demo of traction-control effects.",
+    "technicalSpecs": {
+      "representativeModels": ["Porsche 911 (997/991)", "BMW M3", "Nissan GT-R"],
+      "platform": "Multi-link suspensions, advanced traction and stability control",
+      "notes": "Systems integration and software became as important as mechanical design."
+    },
+    "educationalValue": "Teaches systems engineering and how electronics altered vehicle behaviour and safety.",
+    "emotionalEngagement": "Balanced — sophisticated performance with driver-focused interfaces.",
+    "presentation": "Interactive kiosks show telemetry and driver data; comparison displays of analogue vs digital gauges."
+  },
+  {
+    "id": "electrification",
+    "title": "Electrification & Hybrids — 2010s–Today",
+    "period": "Electrification",
+    "description": "Hybrid and electric platforms redefined performance parameters: instant torque, battery packaging, and new approaches to weight distribution and cooling.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Porsche_Taycan_IMG_0046.jpg",
+    "credit": "Alexander-93 / CC BY-SA 4.0 (via Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:2024_Porsche_Taycan_IMG_0046.jpg",
+    "author": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "localImage": "assets/images/electrification.jpg",
+    "curatorNotes": "Explain battery chemistry, packaging trade-offs, and regenerative systems. Use interactive visualisations of energy flow under acceleration and braking.",
+    "technicalSpecs": {
+      "representativeModels": ["Porsche Taycan", "McLaren P1 (hybrid)", "Ferrari LaFerrari (hybrid)"],
+      "platform": "Battery-electric and hybrid powertrains",
+      "notes": "Discuss charging infrastructure, range, and the new design constraints of EV packaging."
+    },
+    "educationalValue": "Explains fundamentals of electrification, trade-offs, and environmental considerations.",
+    "emotionalEngagement": "Emerging — mixes heritage cues with futuristic performance; surprises visitors with instant torque demos.",
+    "presentation": "Transparent cutaways of battery modules, and touchscreens explaining thermal management."
+  },
+  {
+    "id": "future",
+    "title": "The Now — Autonomy & Connectivity",
+    "period": "Today",
+    "description": "Today performance intersects with autonomy, connectivity, and sustainability. Designers balance heritage cues with new, data-driven experiences.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Rimac-Nevera.jpg",
+    "credit": "MrWalkr / CC BY-SA 4.0 (via Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:Rimac_Nevera.jpg",
+    "author": "MrWalkr",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "localImage": "assets/images/future.jpg",
+    "curatorNotes": "Discuss autonomy, software-defined vehicles, and sustainable manufacturing. Contrast heritage brands with new entrants.",
+    "technicalSpecs": {
+      "representativeModels": ["Rimac Nevera", "Tesla Roadster (202X)", "Concept hypercars"],
+      "powertrain": "High-power electric architectures and software stacks",
+      "notes": "Performance is now measured by software, connectivity and user experience as much as raw metrics."
+    },
+    "educationalValue": "Invites debate on future mobility, ethics of autonomy, and the cultural role of the sports car.",
+    "emotionalEngagement": "Futuristic awe, curiosity and debate about what ‘performance’ will mean.",
+    "presentation": "Mixed-media installations combining physical artifacts with digital storylines and live telemetry."
+  }
+]

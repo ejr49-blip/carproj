@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guided Tour — Sports Car Evolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="logo-square" aria-hidden="true"></span> Guided Tour</div>
+    <nav class="main-nav">
+      <a href="index.html">Back to Exhibition</a>
+    </nav>
+  </header>
+
+  <main class="section" id="tour-main">
+    <h1 id="tour-title">Guided Tour</h1>
+    <p id="tour-desc">Loading tour…</p>
+
+    <div id="tour-stage" class="exhibit-full" aria-live="polite">
+      <figure>
+        <img id="tour-img" src="" alt="">
+        <figcaption id="tour-credit"></figcaption>
+      </figure>
+      <div class="content">
+        <h2 id="tour-exhibit-title"></h2>
+        <p id="tour-exhibit-desc"></p>
+        <h4>Curator Notes</h4>
+        <p id="tour-curator"></p>
+        <div class="specs-wrap"><dl class="specs" id="tour-specs"></dl></div>
+        <p>
+          <a id="tour-details" class="details" href="#">View full details</a>
+        </p>
+        <p>
+          <button id="tour-prev" class="btn">Previous</button>
+          <button id="tour-next" class="btn">Next</button>
+          <button id="tour-restart" class="btn">Restart</button>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Guided tours are curated sequences to explore the exhibition with context and focus.</p>
+  </footer>
+
+  <script>
+  (function(){
+    function qs(name){ return new URLSearchParams(location.search).get(name); }
+    const tourParam = qs('tour') || 'chronological';
+    const tourTitle = document.getElementById('tour-title');
+    const tourDesc = document.getElementById('tour-desc');
+    const imgEl = document.getElementById('tour-img');
+    const creditEl = document.getElementById('tour-credit');
+    const tTitle = document.getElementById('tour-exhibit-title');
+    const tDesc = document.getElementById('tour-exhibit-desc');
+    const tCurator = document.getElementById('tour-curator');
+    const tSpecs = document.getElementById('tour-specs');
+    const detailsLink = document.getElementById('tour-details');
+    const prevBtn = document.getElementById('tour-prev');
+    const nextBtn = document.getElementById('tour-next');
+    const restartBtn = document.getElementById('tour-restart');
+
+    const tours = {
+      chronological: { title: 'Chronological Tour', desc: 'Step through the evolution in order.', ids: [] },
+      design: { title: 'Design-Focused', desc: 'A tour emphasising styling and proportion.', ids: ['golden','supercar','modern'] },
+      engineering: { title: 'Engineering-Focused', desc: 'Focus on mechanical and systems breakthroughs.', ids: ['origins','modern','electrification'] },
+      culture: { title: 'Cultural Highlights', desc: 'Machines that changed culture.', ids: ['golden','supercar','future'] }
+    };
+
+    fetch('exhibits.json').then(r=>r.json()).then(list=>{
+      const byId = Object.fromEntries(list.map(e=>[e.id,e]));
+      // populate chronological ids if needed
+      if(!tours.chronological.ids.length) tours.chronological.ids = list.map(e=>e.id);
+      const chosen = tours[tourParam] || tours.chronological;
+      tourTitle.textContent = chosen.title;
+      tourDesc.textContent = chosen.desc;
+      let idx = 0;
+      function render(){
+        const id = chosen.ids[idx];
+        const ex = byId[id];
+        if(!ex) return;
+        const src = ex.localImage || ex.image || '';
+        imgEl.src = src;
+        imgEl.alt = ex.title;
+        creditEl.innerHTML = ex.credit ? ex.credit + ' — <a href="'+ex.source+'" target="_blank" rel="noopener">Source</a>' : '';
+        tTitle.textContent = ex.title;
+        tDesc.textContent = ex.description;
+        tCurator.textContent = ex.curatorNotes || '';
+        // specs
+        tSpecs.innerHTML = '';
+        if(ex.technicalSpecs){
+          Object.keys(ex.technicalSpecs).forEach(k=>{
+            const dt = document.createElement('dt'); dt.textContent = k;
+            const dd = document.createElement('dd'); dd.textContent = Array.isArray(ex.technicalSpecs[k]) ? ex.technicalSpecs[k].join(', ') : ex.technicalSpecs[k];
+            tSpecs.appendChild(dt); tSpecs.appendChild(dd);
+          });
+        }
+        detailsLink.href = 'exhibit.html?id=' + ex.id;
+        prevBtn.disabled = (idx === 0);
+        nextBtn.disabled = (idx === chosen.ids.length-1);
+      }
+      prevBtn.addEventListener('click', ()=>{ if(idx>0){ idx--; render(); } });
+      nextBtn.addEventListener('click', ()=>{ if(idx<chosen.ids.length-1){ idx++; render(); } });
+      restartBtn.addEventListener('click', ()=>{ idx=0; render(); });
+      // keyboard navigation
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') nextBtn.click();
+        if(e.key === 'ArrowLeft') prevBtn.click();
+        if(e.key === 'Escape') location.href='index.html';
+      });
+      render();
+    }).catch(err=>{
+      tourDesc.textContent = 'Failed to load tour.';
+      console.error(err);
+    });
+  })();
+  </script>
+</body>
+</html>

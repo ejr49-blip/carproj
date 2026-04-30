@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exhibit — Sports Car Evolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="logo-square" aria-hidden="true"></span> Sports Car Evolution</div>
+    <nav class="main-nav">
+      <a href="index.html">Exhibition</a>
+      <a href="#narrative">Narrative</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="exhibit-detail" class="section exhibit-detail">
+      <p>Loading exhibit…</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Images: Selected from Wikimedia Commons under CC BY-SA licenses. See exhibit details for full attribution.</p>
+  </footer>
+
+  <script>
+  function chooseImage(ex){
+    return ex.localImage ? ex.localImage : ex.image;
+  }
+
+  function renderSpecs(specs){
+    if(!specs) return '';
+    let html = '<dl class="specs">';
+    for(const k of Object.keys(specs)){
+      const v = specs[k];
+      html += `<dt>${k}</dt><dd>${Array.isArray(v) ? v.join(', ') : v}</dd>`;
+    }
+    html += '</dl>';
+    return html;
+  }
+
+  document.addEventListener('DOMContentLoaded', async ()=>{
+    try{
+      const res = await fetch('exhibits.json');
+      const exhibits = await res.json();
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      const exhibit = exhibits.find(e=>e.id===id);
+      const container = document.getElementById('exhibit-detail');
+      if(!exhibit){
+        container.innerHTML = '<p>Exhibit not found. <a href="index.html">Back to exhibition</a></p>';
+        return;
+      }
+      const imgSrc = chooseImage(exhibit);
+      container.innerHTML = `
+        <article class="exhibit-full">
+          <figure>
+                <img src="${imgSrc}" alt="${exhibit.title}">
+                <figcaption>
+                  ${exhibit.credit || ''}
+                  ${exhibit.author ? ' — By ' + exhibit.author : ''}
+                  ${exhibit.source ? ' — <a href="' + exhibit.source + '" target="_blank" rel="noopener">Source</a>' : ''}
+                  ${exhibit.license_url ? ' — <a href="' + exhibit.license_url + '" target="_blank" rel="noopener">' + (exhibit.license || 'License') + '</a>' : ''}
+                </figcaption>
+              </figure>
+          <div class="content">
+            <h1>${exhibit.title}</h1>
+            <p>${exhibit.description}</p>
+            <h3>Curator Notes</h3>
+            <p>${exhibit.curatorNotes || ''}</p>
+            <h3>Technical Specs</h3>
+            ${renderSpecs(exhibit.technicalSpecs)}
+            <h3>Educational Value</h3>
+            <p>${exhibit.educationalValue || ''}</p>
+            <h3>Emotional Engagement</h3>
+            <p>${exhibit.emotionalEngagement || ''}</p>
+            <h3>Presentation</h3>
+            <p>${exhibit.presentation || ''}</p>
+            <p><a href="index.html">Back to exhibition</a></p>
+          </div>
+        </article>
+      `;
+    }catch(e){
+      document.getElementById('exhibit-detail').innerHTML = '<p>Failed to load exhibit.</p>';
+      console.error(e);
+    }
+  });
+  </script>
+</body>
+</html>
