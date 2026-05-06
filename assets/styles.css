@@ -1,19 +1,96 @@
 /* Inspired re-theme: modern system, generous whitespace */
-:root{
-  --bg:#fbfbfc;
-  --panel:#ffffff;
-  --text:#0b1220;
-  --muted:#f4f6f8;
-  --muted-text:#6b7280;
-  --accent:#ffb703;
-  --accent-2:#0b2545;
-  --gap:24px;
-  --max-width:1100px;
-  --radius:10px;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+:root {
+  /* Color surfaces */
+  --page-reading: #f5efe5;
+  --surface-neutral: rgba(255, 255, 255, 0.78);
+  --surface-reading: rgba(255, 250, 243, 0.92);
+  --surface-emphasis: #edf3eb;
+  --surface-proof: #dfe9e1;
+  --surface-reflection: #efe5d7;
+  --surface-synthesis: #e4eaf2;
+  --surface-warning: #f5e2d7;
+  --surface-next: #e6efe3;
+
+  /* Borders & ink */
+  --border-neutral: rgba(73, 90, 77, 0.16);
+  --border-strong: rgba(73, 90, 77, 0.28);
+  --border-proof: rgba(83, 111, 92, 0.24);
+  --ink-strong: #203126;
+  --ink-body: #435548;
+  --ink-muted: #536354;
+
+  /* Accents */
+  --accent: #7d9875;
+  --accent-strong: #4f6854;
+  --signal: #7a4e21;
+
+  /* Typography sizes */
+  --type-hero-size: clamp(3rem, 6vw, 4.85rem);
+  --type-section-size: clamp(2rem, 4vw, 3rem);
+  --type-body-size: 1rem;
+  --type-body-leading: 1.8;
+  --type-concept-size: 1.25rem;
+  --type-caption-size: 0.95rem;
+  --type-annotation-size: 0.875rem;
+  --type-meta-size: 0.75rem;
+  --tracking-meta: 0.24em;
+
+  /* Measures & spacing */
+  --measure-reading: 68ch;
+  --measure-wide: 88ch;
+  --measure-hero: 18ch;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+
+  /* Radii & shadows */
+  --radius-card: 1.5rem;
+  --radius-panel: 2rem;
+  --radius-pill: 999px;
+  --shadow-card: 0 14px 36px rgba(44, 52, 43, 0.06);
+  --shadow-panel: 0 24px 60px rgba(44, 52, 43, 0.08);
+
+  /* Motion */
+  --motion-fast: 180ms;
+  --motion-gentle: 260ms;
+
+  /* Local tokens used in our layout (map to design tokens) */
+  --bg: var(--page-reading);
+  --panel: var(--surface-reading);
+  --text: var(--ink-strong);
+  --muted: var(--surface-neutral);
+  --muted-text: var(--ink-muted);
+  --accent-2: var(--accent-strong);
+  --gap: 24px;
+  --max-width: 1100px;
+  --radius: var(--radius-card);
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5}
+html{
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body{
+  margin:0;
+  min-height:100vh;
+  min-height:100dvh;
+  background:var(--page-reading);
+  color:var(--ink-strong);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  font-size:var(--type-body-size);
+  line-height:var(--type-body-leading);
+}
+
+h1,h2,h3,h4{
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
 
 /* Header */
 .site-header{display:flex;align-items:center;justify-content:space-between;padding:28px 20px;max-width:var(--max-width);margin:0 auto;border-bottom:1px solid rgba(11,37,69,0.04);position:sticky;top:0;background:transparent;z-index:50}
@@ -26,9 +103,10 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-size:
 /* Hero */
 .hero{display:grid;grid-template-columns:1fr 360px;align-items:center;gap:32px;padding:96px 20px 64px;background:var(--bg)}
 .hero-inner{text-align:left}
-.hero h1{font-size:58px;line-height:1;margin:0 0 14px 0;font-weight:800;color:var(--accent-2)}
+.hero h1{font-size:var(--type-hero-size);line-height:0.98;margin:0 0 14px 0;font-weight:800;color:var(--accent-2);letter-spacing:-0.02em}
 .lead{font-size:18px;color:var(--muted-text);margin:0}
-.cta{display:inline-block;margin-top:18px;padding:12px 18px;background:var(--accent);color:var(--text);text-decoration:none;font-weight:800;border-radius:10px;box-shadow:0 8px 30px rgba(255,183,3,0.12)}
+.cta{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;padding:10px 16px;background:var(--ink-strong);color:var(--panel);text-decoration:none;font-weight:800;border-radius:var(--radius-pill);box-shadow:var(--shadow-panel);transition:transform var(--motion-fast) ease}
+.cta:hover{transform:translateY(-2px)}
 .hero-graphic{width:360px;height:200px;justify-self:end}
 .car-silhouettes{width:100%;height:100%;display:block}
 .car-silhouettes .sil1{fill:var(--accent-2)}
@@ -41,6 +119,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-size:
 
 /* Sections & layout */
 .section{max-width:var(--max-width);margin:48px auto;padding:0 20px}
+.section h2{font-size:var(--type-section-size);line-height:1.05;margin-bottom:12px}
 .narrative ul{display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:12px 0 0 0;list-style:none}
 .narrative li{background:var(--muted);padding:18px 18px 18px 64px;border-left:6px solid var(--accent-2);flex:1;min-width:220px;position:relative}
 
