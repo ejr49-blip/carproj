@@ -87,11 +87,23 @@
           </div>
         </article>
       `;
+      // Reveal the populated section (styles default to hidden for reveal animations)
+      try{ container.classList.add('in-view'); }catch(e){}
     }catch(e){
       console.error('Exhibit load error:', e);
       container.innerHTML = `<p>Failed to load exhibit. ${e && e.message ? e.message : ''} <a href="index.html">Back</a></p>`;
+      try{ container.classList.add('in-view'); }catch(e){}
     }
   });
   </script>
+  <noscript>
+    <style>
+      /* Ensure content is visible if JS is disabled */
+      #exhibit-detail.section { opacity: 1 !important; transform: none !important; }
+    </style>
+    <div style="max-width:var(--max-width);margin:24px auto;padding:0 20px;color:#7a4e21;font-weight:700;">
+      This page requires JavaScript to render exhibit details. Please enable JavaScript, or open the exhibition index at <a href="https://ejr49-blip.github.io/carproj/">the GitHub Pages site</a>.
+    </div>
+  </noscript>
 </body>
 </html>
