@@ -78,6 +78,21 @@ function renderGrid(exhibits){
     });
 
     imgEl.addEventListener('click', ()=> openModal(ex));
+    // ensure the detail link resolves correctly even when served from a subpath
+    const detailLink = card.querySelector('a.details');
+    if(detailLink){
+      try{
+        detailLink.href = new URL(`exhibit.html?id=${ex.id}`, document.baseURI).href;
+      }catch(e){
+        // fallback: leave relative href as-is
+      }
+      // If some other script prevents the default navigation, ensure we still navigate.
+      detailLink.addEventListener('click', (evt)=>{
+        if(evt.defaultPrevented){
+          window.location.href = detailLink.href;
+        }
+      });
+    }
     grid.appendChild(card);
   });
 }
