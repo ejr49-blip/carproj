@@ -44,18 +44,21 @@
   }
 
   document.addEventListener('DOMContentLoaded', async ()=>{
+    const container = document.getElementById('exhibit-detail');
     try{
-      const res = await fetch('exhibits.json');
+      // Resolve exhibits.json against the current document base to avoid base-path issues
+      const url = new URL('exhibits.json', document.baseURI).href;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('Failed to fetch exhibits.json (' + res.status + ')');
       const exhibits = await res.json();
       const params = new URLSearchParams(location.search);
       const id = params.get('id');
       const exhibit = exhibits.find(e=>e.id===id);
-      const container = document.getElementById('exhibit-detail');
       if(!exhibit){
         container.innerHTML = '<p>Exhibit not found. <a href="index.html">Back to exhibition</a></p>';
         return;
       }
-      const imgSrc = chooseImage(exhibit);
+      const imgSrc = chooseImage(exhibit) || '';
       container.innerHTML = `
         <article class="exhibit-full">
           <figure>
@@ -85,8 +88,8 @@
         </article>
       `;
     }catch(e){
-      document.getElementById('exhibit-detail').innerHTML = '<p>Failed to load exhibit.</p>';
-      console.error(e);
+      console.error('Exhibit load error:', e);
+      container.innerHTML = `<p>Failed to load exhibit. ${e && e.message ? e.message : ''} <a href="index.html">Back</a></p>`;
     }
   });
   </script>
