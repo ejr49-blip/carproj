@@ -102,7 +102,7 @@ h1,h2,h3,h4{
 
 /* Hero */
 .hero{display:grid;grid-template-columns:1fr 360px;align-items:center;gap:32px;padding:96px 20px 64px;background:var(--bg)}
-.hero-inner{text-align:left}
+.hero-inner{ text-align:center; justify-self:center; max-width:720px }
 .hero h1{font-size:var(--type-hero-size);line-height:0.98;margin:0 0 14px 0;font-weight:800;color:var(--accent-2);letter-spacing:-0.02em}
 .lead{font-size:18px;color:var(--muted-text);margin:0}
 .cta{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;padding:10px 16px;background:var(--ink-strong);color:var(--panel);text-decoration:none;font-weight:800;border-radius:var(--radius-pill);box-shadow:var(--shadow-panel);transition:transform var(--motion-fast) ease}
