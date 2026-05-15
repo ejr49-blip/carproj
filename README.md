@@ -13,6 +13,8 @@ python -m http.server 8000
 
 3. Open your browser to http://localhost:8000 and explore `index.html`.
 
+Live demo (GitHub Pages): https://ejr49-blip.github.io/carproj/
+
 Files created:
 
 - `index.html` — main site

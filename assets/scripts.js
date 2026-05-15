@@ -172,6 +172,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
   // initialize story feed (infinite scroll + spec-driven rendering)
   initStoryLoading();
+  // Ensure guided-tour links resolve correctly when served from a subpath
+  try {
+    Array.from(document.querySelectorAll('a[href^="guided-tour.html"]')).forEach(a => {
+      try { a.href = new URL(a.getAttribute('href'), document.baseURI).href; } catch (e) {}
+      a.addEventListener('click', (evt) => {
+        if (evt.defaultPrevented) {
+          window.location.href = a.href;
+        }
+      });
+    });
+  } catch (e) {}
 });
 
 /* Story / infinite scroll + spec-driven rendering */
